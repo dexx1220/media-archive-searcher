@@ -16,8 +16,12 @@ def lookup(request):
         status=payload['status']
       )
     except:
-      resp = 'No data found'
+      resp = flask.jsonify(
+        message="Title not found."
+      )
   else:
-    resp = 'Please provide title parameter'
+    resp = flask.jsonify(
+      message="Error searching for title."
+    )
 
   return resp

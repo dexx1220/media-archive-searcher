@@ -26,6 +26,8 @@ def writeData(request):
       status=req_status
     )
   else:
-    resp = "Please provide title and status parameters"
+    resp = flask.jsonify(
+      message="Please provide title and status parameters"
+    )
 
   return resp
